@@ -9,7 +9,11 @@ const Visitor=require('../backend/database/Users')
 const Router =require('./Api/Routes')
 // const port=process.env.port
 
-app.use(cors())
+app.use(cors({
+    origin:[""],
+    methods:["POST","GET"],
+    credentials:true
+}))
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.json())
 
